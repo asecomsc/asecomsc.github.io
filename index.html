@@ -1,12 +1,19 @@
 <html>
 <head>
-  <h2>Consultores de negocios</h2>
- 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.get("https://script.google.com/macros/s/AKfycbxZHx86Sp5zAiRb4aAhFcTnTWc5SbvqhhcnhsbGiBi2VDVPXZcydHJZkwhYOkLVCH4i9Q/exec", function(data, status){
+      $("a").attr("href", "http://" + data);
+    });
+  });
+});
+</script>
 </head>
-
 <body>
-   <p></p>
-   <a href="https://www.w3schools.com/">Visit W3Schools.com!</a> 
+  <h2>Consultores de negocios</h2>
+  <a href="http://google.com">link text</a><br><br>
+  <button>Enviar requerimiento</button>
 </body>
-
 </html>
