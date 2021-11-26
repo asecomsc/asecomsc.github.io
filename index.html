@@ -9,7 +9,7 @@ $(document).ready(function(){
       miObj = JSON.parse(data);
       $("#dirWeb").attr("href", "http://" + miObj.web);
       $("#dirTcp").attr("href", "http://" + miObj.tcp.slice(6));
-      $("h2").css("color","red");
+      $("h2").css("color","gray");
     });
   });
 });
