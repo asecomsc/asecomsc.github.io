@@ -1,19 +1,23 @@
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.3">  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
   $("button").click(function(){
-    $.get("https://script.google.com/macros/s/AKfycbxZHx86Sp5zAiRb4aAhFcTnTWc5SbvqhhcnhsbGiBi2VDVPXZcydHJZkwhYOkLVCH4i9Q/exec", function(data, status){
-      $("a").attr("href", "http://" + data);
+    $.get("https://script.googleusercontent.com/macros/echo?user_content_key=BZXlWntJvE4yG9-lUH-QAA1TpTC79OhwsH8r272GsQaZP9JwclZeEntKbgpNTGiy1ZwM8wCDJ3ehcbZ1FdixEN7D6CN7FtL-m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnNZUrHvZopSny7qEIBbUhE58AVkj7CZCaWnAov7MWZvWUs4pjcjFPa1f1lMx4s2lW2n3X157WjAPizwUbASQ5et7mkOGDQ_LJdz9Jw9Md8uu&lib=MjXtQW3i5OFKTmiF3ldGSb22VGfNwWzBi", function(data, status){
+      miObj = JSON.parse(data);
+      $("#dirWeb").attr("href", "http://" + miObj.web);
+      $("#dirTcp").attr("href", miObj.tcp.slice(6));
     });
   });
 });
 </script>
 </head>
 <body>
-  <h2>Consultores de negocios</h2>
-  <a href="http://google.com">link text</a><br><br>
-  <button>Enviar requerimiento</button>
+  <h2>Asecom Consultores</h2>
+  <a href="http://google.com" id="dirWeb">www.google.com</a><br><br>
+  <a href="http://google.com" id="dirTcp">www.youtube.com</a><br><br>
+  <button>Apps Script read</button>
 </body>
 </html>
