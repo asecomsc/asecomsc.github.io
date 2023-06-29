@@ -6,6 +6,7 @@
 $(document).ready(function(){
   $("button").click(function(){
     $.get("https://script.google.com/macros/s/AKfycbzb5eQbfGzbocLVKmLfsQ-ZXydfcgt_kMmt68Tf-n86uWJZFBc5tL6pdhzib0_xO4oW1Q/exec", function(data, status){
+      alert(data);
       miObj = JSON.parse(data);
       $("#dirWeb").attr("href",  miObj.web);  // to-do
       $("#dirTcp").attr("href", "http://" + miObj.tcp.slice(6)); // music
