@@ -7,8 +7,9 @@ $(document).ready(function(){
   $("button").click(function(){
     $.get("https://script.google.com/macros/s/AKfycbxwasiGBZHRIHRLO3Ct_kVQfJwgROFoqTyCf1ZihYMH-Yg_HCG-uJyxPZE_phnU0zNqgQ/exec", function(data, status){
       miObj = JSON.parse(data);
-      $("#dirWeb").attr("href",  miObj.web);
-      $("#dirTcp").attr("href", "http://" + miObj.tcp.slice(6));
+      $("#dirWeb").attr("href",  miObj.web);  // to-do
+      $("#dirTcp").attr("href", "http://" + miObj.tcp.slice(6)); // music
+      $("#dirMus").attr("href",  miObj.rdp); // sergio2-pc
       $("h2").css("color","gray");
     });
   });
